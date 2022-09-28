@@ -11043,8 +11043,14 @@ p {
 .blue-box-decoration {
   border-radius: 400px 0 0 400px;
   height: 70%;
-  width: 100%;
+  width: calc(100vw - 200px);
   bottom: 0;
-  left: 14vw;
+  left: 200px;
   background-color: #5265E1;
+  z-index: -1;
+}
+@media (min-width: 992px) {
+  .blue-box-decoration {
+    width: calc(50vw - 200px);
+  }
 }/*# sourceMappingURL=main.css.map */
