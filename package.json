@@ -1,0 +1,16 @@
+{
+  "name": "sprint-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-e1": "purgecss --css nivel1/ejercicio1/scss/front.css --content index.html -o nivel1/ejercicio1/css/front.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.2.1"
+  }
+}
