@@ -11035,6 +11035,10 @@ header #burger.opened span:nth-child(3) {
   }
 }
 
+article {
+  margin-bottom: 200px;
+}
+
 h1, .h1 {
   font-size: 50px;
 }
