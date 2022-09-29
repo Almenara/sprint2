@@ -6,6 +6,7 @@ $color-white: white;
 $color-red: #FA5959;
 $color-blue: #5265E1;
 $color-dark-blue: rgb(36,41,70);
+$color-green: #198754;
 $color-shadow: #ccc;
 
 $primary: $color-blue;
@@ -118,7 +119,6 @@ footer{
             width: 148px;
         }
         #menu-footer{
-            
             a{
                 text-align: center;
                 text-transform: uppercase;
@@ -143,6 +143,4 @@ footer{
         min-width: max-content;
         max-height: 40px;
     }
-
-
 }
