@@ -1,0 +1,159 @@
+
+
+$color-black: black;
+$color-gray: rgb(247,247,247);
+$color-white: white;
+$color-red: #FA5959;
+$color-blue: #5265E1;
+$color-dark-blue: rgb(36,41,70);
+$color-green: #198754;
+$color-shadow: #ccc;
+
+$primary: $color-blue;
+$secondary: $color-red;
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+@import "header/header";
+@import "tabs/tabs";
+@import "accordion/accordion";
+
+@mixin buttons($color, $bg-color, $text-color) {
+    background-color: $bg-color;
+    padding-left: 30px ;
+    padding-right: 30px ;
+    color: $text-color;
+    box-shadow: 0 5px 5px $color-shadow;
+    border: 2px solid $bg-color;
+    background-color: $bg-color; 
+    &:hover{
+        background-color: $color-white;
+        color: $color;
+        border-color: $color;
+    }
+}
+
+h1{
+    font-size: 50px;
+}
+p{
+    color: $gray-600;
+}
+article{
+    margin-bottom: 200px;
+}
+.btn.red{
+    @include buttons($secondary, $secondary, $color-white)
+}
+.btn.blue{
+    @include buttons($primary, $primary, $color-white)
+}
+.btn.white{
+    @include buttons($color-black, $color-gray, $color-black)
+}
+#first-illustration-container{
+    @media (min-width: 1500px) {
+        right: -90px;
+    }
+    position: relative;
+    right: 0;
+}
+.blue-box-decoration{
+    border-radius:  400px 0 0 400px;
+    height: 70%;
+    width: calc(100vw - 200px);
+    bottom: 0;
+    left: 200px;
+    background-color: $primary;
+    z-index: -1;
+    
+    @media (min-width: 992px) {
+        width: calc(50vw - 200px);
+    }
+    &.left{
+        border-radius:  0 400px 400px 0;
+        left: auto;
+        right: 200px;
+        bottom: -20px;
+    }
+}
+
+#browsers{
+    @media (min-width: 768px) {
+        height: 450px;
+    }
+    .card{
+        border: none;
+        box-shadow: 0 12px 10px $color-shadow;
+        width: 280px;
+        border-radius: 15px;
+        img{
+            height: 90px;
+        }
+        > .list-group:last-child {
+            border-radius: 15px;
+        }
+        .list-group-flush > .list-group-item{
+            padding: 25px;
+        }
+        .list-group-flush > .list-group-item:first-child {
+            border-bottom-style: dotted;
+            border-bottom-width: 5px;
+        }
+        .list-group-flush > .list-group-item:last-child {
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+        
+    }
+}
+
+footer{
+    background-color: $primary;
+    color: $white;
+    h6{
+        letter-spacing: 0.5rem;
+    }
+    #bottom-footer{
+        background-color: $color-dark-blue;
+        #logo-footer{
+            width: 148px;
+        }
+        #menu-footer{
+            a{
+                text-align: center;
+                text-transform: uppercase;
+                color: $white;
+                &:hover{
+                    color: $secondary;
+                }
+            }
+        }
+        .rrss{
+
+            a {
+                font-size: 22px;
+                color: $white;
+                &:hover{
+                    color: $secondary
+                }
+            }
+        }
+    }
+    .was-validated{
+        .field{
+            border: 2px solid $secondary;
+            background-color: $secondary;
+            border-radius: 8px;
+            .invalid-feedback{
+                color: $white;
+                font-style: italic;
+                margin-left: 10px;
+            }
+        }
+    }
+    .btn{
+        box-shadow: none!important;
+        min-width: max-content;
+        max-height: 40px;
+    }
+}
