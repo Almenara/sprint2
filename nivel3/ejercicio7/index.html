@@ -11,13 +11,14 @@
 <body>
     <main class="container-fluid overflow-hidden">
         <header class="container">
-            <nav class="d-flex navbar justify-content-between position-relative">
+            <nav class="d-flex navbar justify-content-between">
                 <div class="" id="logo">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand d-flex justify-content-start align-content-center" href="#">
                         <img src="img/logo-bookmark.svg" alt="logo"/>
+                        <img class="d-none" src="img/logo-bookmark-white.svg" alt="logo"/>
                     </a>
                 </div>
-                <ul class="d-none navbar-nav d-md-flex flex-column position-relative flex-md-row justify-content-end gap-5 fs-6" id="menu">
+                <ul class="navbar-nav d-flex flex-column flex-md-row align-items-center justify-md-content-end gap-md-5 fs-6" id="menu">
                     <li class="nav-item">
                         <a class="nav-link" href="#features">Features</a>
                     </li>
@@ -29,6 +30,10 @@
                     </li>
                     <li class="nav-item">
                         <a class="btn red" href="#">Login</a>
+                    </li>
+                    <li class="nav-item d-flex d-md-none mt-auto gap-5">
+                        <a rel="noreferrer noopener" title="Facebook" href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-square"></i></a>
+                        <a rel="noreferrer noopener" title="Twitter" href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
                     </li>
                 </ul>
                 <div class="d-flex align-self-center d-md-none flex-column justify-content-evenly" id="burger">
@@ -299,10 +304,9 @@
                 </div>
                 <div class="row d-flex flex-column align-items-center">
                     <div class="col-12 col-md-10 col-lg-6 col-xl-4">
-                        <form class="d-flex flex-column flex-md-row gap-4 mb-5 was-validated"> 
+                        <form id="contact-form" class="d-flex flex-column flex-md-row gap-4 mb-5 needs-validation" novalidate> 
                             <div class="d-flex flex-column flex-fill field">
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email address" required>
-                                <div class="valid-feedback">Valid.</div>
+                                <input type="email" class="form-control has-validation" id="email" aria-describedby="emailHelp" placeholder="Enter your email address" required>
                                 <div class="invalid-feedback">Please fill out this field.</div>
                             </div>
                             <button type="submit" class="btn red">Contact Us</button>

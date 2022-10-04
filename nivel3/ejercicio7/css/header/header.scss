@@ -2,20 +2,132 @@ header{
     padding-top: 40px;
     padding-bottom: 40px;
     text-transform: uppercase;
+    z-index: 10;
+    position: unset!important;
+    #logo{
+        z-index: 11;
+        &.opened{
+            img:first-child{
+                display: none;
+                @media (min-width: 768px) {
+                    display: flex!important;
+                }
+            }
+            img:last-child{
+                display: flex!important;
+                @media (min-width: 768px) {
+                    display: none!important;
+                }
+            }
+        }
+    }
+    .navbar{
+        position: unset!important;
+    }
     #menu{
 
+        -moz-transition: top .15s ease-out;
+        -webkit-transition: top .15s ease-out;
+        -ms-transition: top .15s ease-out;
+        -o-transition: top .15s ease-out;
+        transition: top .15s ease-out;
         list-style: none;
-        padding: 0;
-        margin: 0;
+        padding: 130px 25px 50px;
+        margin: 0; 
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        background-color: $color-dark-blue-trans;
+        color: $white;
+        left: 0;
+        top: -101vh;
+        min-height: 490px;
+        z-index: 10;
+        
+        @media (min-width: 768px) {
+            position: relative; 
+            background-color: transparent;
+            top: initial;
+            bottom: initial;
+            left: initial;
+            height: auto;
+            width: auto;
+            min-height: auto;
+            padding: 0;
+        }
+
+        &.opened{
+            top:0px;
+        }
             
         li{
             display: flex;
             align-items: center;
+            justify-content: center;
+            width: 100%;     
+            padding: 10px 0;
+            border-bottom: 1px solid $color-white-trans;
+            &:first-child{
+                border-top: 1px solid $color-white-trans;
+            }
+            &:nth-child(4){
+                border: none;
+                padding-top: 20px;
+                @media (min-width: 768px) {
+                    padding-top: 0;
+                }
+            }
+            &:last-child{
+                border: none;
+                font-size: 30px;
+                
+            }
             a{
+                display: block;
+                color: $white;  
+                font-size: 20px;
+                font-weight: 400;
+
                 &:hover{
                     color: $secondary;
                 }
+                
+                @media (min-width: 768px) {
+                    color: $black;
+                    font-size: 16px;
+                    font-weight: 100;
+                    
+                }
+                
+                &.btn{
+                    @media (max-width: 767px) {
+                        border: 2px solid $white;
+                        width: 100%;
+                        background-color: transparent;
+                        box-shadow: none;
+                        &:hover{
+                            background-color: $white;
+                            color: $color-dark-blue;
+                        }
+                    }
+                    @media (min-width: 768px) {
+                        color: $white;   
+                        &:hover{
+                            color: $secondary;
+                        }  
+                    }   
+                }
             }
+            @media (min-width: 768px) {
+                width: auto;     
+                padding: 0;
+                border-bottom: none;  
+                
+                &:last-child{
+                    border: none;
+                }              
+            }   
+            
         }
     }
     #burger{
@@ -27,6 +139,7 @@ header{
         -ms-transition: all .15s ease-out;
         -o-transition: all .15s ease-out;
         transition: all .15s ease-out;
+        z-index: 11;
 
         &:hover:not(.opened){
             flex-basis: 30px;
@@ -50,7 +163,7 @@ header{
         }
         &.opened{
             span{
-               // background-color: $white;
+                background-color: $white;
             }
             span:nth-child(1){
                 transform: rotate(45deg);

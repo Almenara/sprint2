@@ -1,11 +1,11 @@
-
-
 $color-black: black;
 $color-gray: rgb(247,247,247);
 $color-white: white;
+$color-white-trans: rgba(255,255,255,.2);
 $color-red: #FA5959;
 $color-blue: #5265E1;
 $color-dark-blue: rgb(36,41,70);
+$color-dark-blue-trans: rgba(36,41,70,.9);
 $color-green: #198754;
 $color-shadow: #ccc;
 
@@ -24,7 +24,7 @@ $secondary: $color-red;
     color: $text-color;
     box-shadow: 0 5px 5px $color-shadow;
     border: 2px solid $bg-color;
-    background-color: $bg-color; 
+    background-color: $bg-color;
     &:hover{
         background-color: $color-white;
         color: $color;
@@ -52,7 +52,7 @@ article{
 }
 #first-illustration-container{
     @media (min-width: 1500px) {
-        right: -90px;
+        right: -90px;  
     }
     position: relative;
     right: 0;
@@ -112,7 +112,6 @@ article{
             border-bottom-right-radius: 15px;
             border-bottom-left-radius: 15px;
         }
-        
     }
 }
 
@@ -149,16 +148,34 @@ footer{
         }
     }
     .was-validated{
-        .field{
-            border: 2px solid $secondary;
-            background-color: $secondary;
-            border-radius: 8px;
-            .invalid-feedback{
-                color: $white;
-                font-style: italic;
-                margin-left: 10px;
+        input{
+            background-color: $white!important;
+        
+            &:invalid{
+                border: 2px solid $secondary;
+                z-index: 1;
             }
         }
+        .field{ 
+            .invalid-feedback{
+                background-color: $secondary;
+                color: $white;
+                font-style: italic;
+                padding-left: 10px;
+                padding-top: 10px;
+                margin-top: -5px;
+                border-radius: 0 0 0.375rem 0.375rem;
+                z-index: 0;
+            }
+        }
+    }
+    .was-validated .form-control:valid:focus, 
+    .form-control.is-valid:focus,
+    .form-control,
+    .was-validated .form-control:valid, 
+    .form-control.is-valid {
+        border: 2px solid $white;
+        box-shadow: none;
     }
     .btn{
         box-shadow: none!important;
